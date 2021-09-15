@@ -1,0 +1,8 @@
+Conteudo da Aula
+
+* Criar classes no models;
+* Como migrar a classe criada para o banco de dados;
+* Como alterar uma classe de dados e replicar para o banco de dados;
+* Como registrar a classe no Django Admin;
+
+
