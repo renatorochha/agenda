@@ -1,0 +1,96 @@
+Aula 3 - Explicando a estrutura básica do Django
+
+- Django-Admin;
+* É o utilitário de linha de comando do Django para tarefas administrativas;
+- Manage:
+* É um wrapper em volta do django-admin.py;
+* Ele deliga tarefas para o django-admin.py;
+* Responsavel por colocar o pacote do projeto no sys.path;
+* Ele define a variável de ambiente Django_Settings_Module que então aponta para o arquivo settings.py
+* Por isso, o manage.py é gerado automaticamente junto ao projeto, para facilitar a uso de comandos do django-admin.py
+(comandos administrativos)
+
+- WSGI;
+* Web Server Gateway Interface - Interface de porta de entrada do servidor web;
+* Plataforma padrão para aplicações web em Python;
+* Serve de interface do Servidor Web e a aplicação web;
+* O Django com o comando startproject inicia uma configuração WSGI padrão para que se possa executar sua aplicação web;
+* Quando se inicia a aplicação Django com o comando runserver é iniciado um servidor de aplicação web leve. Esse servidor
+é especificado pela configuração WSG_APPLICATION;
+
+- Settings;
+* É o responsável pelas configurações do Django;
+* Nele é possível configurar por exemplo apps, conexão com banco de dados, templates, time zone, cache, segurança, aequivos
+estáticos, etc.
+
+- URLS;
+* É um Schema de URL;
+* Responsável por gerenciar as rotas da URLs, onde é possível configurar para onde cada rota será executada;
+* É uma forma limpa e elegante para gerenciar URLs;
+
+- Views;
+* Responsável por processar e retornar uma resposta para o cliente que fez a requisição;
+
+- Models;
+* Define o modelo de dados inteiramente em Python;
+* Faz a abstração dos objetos de banco para o Python, transformando todas as tabelas em classes e os acessos são feito
+utilizando linguagem Python, onde o Django realiza a transformação para SQL;
+
+- Admin;
+* Interface administrativa gerada automaticamente pelo Django;
+* Ele lê os metadados que estão nos models e fornece uma interface poderosa e pronta para manipulação de dados;
+
+- Static;
+* Responsável por armazenar os arquivos estáticos;
+* CSS, JavaScript, imagens;
+
+- Templates;
+* Responsável por armazenar os arquivos HTML;
+* O diretório templates é diretório padrão para armazenarmos todo o conteúdo HTML da nossa aplicação;
+
+AULA 4 - Projeto AGENDA
+- Criar um novo projeto;
+- Criar um novo app;
+- Configurar banco de dados;
+- Migrar tabelas padrões do Django para o banco;
+- Acessando o Django Admin;
+
+Funções do Projeto Agenda
+- Será criado totalmente do zero;
+- A aplicação terá persistência de banco de dados;
+- A aplicação deverá ser multiusuário;
+- Cada usuário deverá visualizar apenas a sua agenda e não a agenda dos demais;
+- A aplicação deverá contar com autenticação;
+
+Tabelas padrões do Django
+- O Django já possui tabelas padrões que são utilizadas principalmente para parte de segurança e autenticação;
+- É possível criar as tabelas padrões do Django com o comando migrate: python manage.py migrate
+- Ao criar as tabelas padrões do Django, é necessário criar um primeiro usuário para conseguir acessar o painel
+Django Administration;
+- Para criar um primeiro usuário administrador é necessário utilizar o comando createsuperuser:python manage.py createsuperuser --username admin;
+- As tabelas padrões consistem em auxiliar e agilizar toda parte de autenticação e também de perfis de acesso;
+- Entre as tabelas padrões estão as tabelas de usuários, grupo e de perfil;
+- Com as tabelas padrões, é possível, criar usuários, grupos de usuários e definir perfis de qual usuário pode acessardeterminado
+conteúdo.
+
+
+
+Conteudo da Aula 5
+
+* Criar classes no models;
+* Como migrar a classe criada para o banco de dados;
+* Como alterar uma classe de dados e replicar para o banco de dados;
+* Como registrar a classe no Django Admin;
+
+Migração de dados no Django
+* Para criação de dados no Django, é necessário que tenha classes criadas;
+* Com as classes criadas, para migração é utilizado o comando migrate;
+* Também pode-se utilizar o comando migrations para criação de um arquivo de migração,
+sem a necessidade de migrar "às cegas";
+* Também pode-se utilizar o comando sqlmigrate, que ao invés de aplicar a migração, é gerado todo comando para que essa migração
+possa ser efetuada manualmente no banco de dados.
+
+
+
+
+
