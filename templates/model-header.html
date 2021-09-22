@@ -1,4 +1,9 @@
 
     <meta charset="UTF-8">
     <title>Agenda</title>
+    <form action="submit" method="POST">{% csrf_token %}
+        <div align="right">
+        <a href="/logout">logout</a>
+        </div>
+    </form>
     <h1>Agenda</h1>
